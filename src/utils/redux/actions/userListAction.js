@@ -9,16 +9,17 @@ export const userListAction = () => async dispatch => {
 
     try {
         const userListResponse = await userServices.getRequest(getUser);
-        console.log(userListResponse.data)
+        console.log(userListResponse);
         dispatch({
             type:USER_LIST_SUCCESS,
             data:userListResponse.data
         });
     } catch (error) {
+        console.log(error);
         dispatch({
             type:USER_LIST_FAIL,
             data:{
-                status:error.response.status,
+                status:error.response,
                 message:error.response.data.message
             }
         })

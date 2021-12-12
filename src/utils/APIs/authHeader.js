@@ -2,7 +2,6 @@ export default function authHeader() {
     const user = JSON.parse(localStorage.getItem("token") || "{}");
 
     if (user && user.token) {
-      console.log("HELLO")
       // For Spring Boot back-end
       // return { Authorization: "Bearer " + user.token };
   

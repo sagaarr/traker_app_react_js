@@ -33,11 +33,69 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .card-text ul {
   margin: 0 auto;
-    display: table;
+  display: table;
+}
+
+.dot {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  /* display: inline-block; */
+  margin: unset;
+  padding: unset;
+  display: flex;
+  position: absolute;
+  top: 19%;
+  left: 58%;
+}
+
+.active {
+  background-color: rgb(12, 158, 90);
+}
+
+.in-active {
+  background-color: rgb(189, 14, 14);
+}
+
+.driver-photo img {
+  width: 40%;
+}
+
+.bg-white {
+  background-color: white;
+  margin: 151px 110px auto 110px;
+  padding: 90px 83px;
+  padding-top: unset;
+}
+
+.align-text {
+  text-align: left;
+}
+
+.bg-white h5 {
+  padding-bottom: 31px;
+  padding-top: 44px;
+}
+
+.right-border {
+  border-right: 1px solid #e7e7e7;
+}
+.mb-btn {
+  margin-bottom: 36.9%;
+}
+
+.error {
+  font-size: 14px;
+  font-weight: 300;
+  color: red;
 }

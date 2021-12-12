@@ -1,0 +1,14 @@
+.droopdown-btn {
+    margin-right: 2px;
+}
+.fuel-record-divider {
+    border-bottom:1px solid black;
+}
+
+.fuel-report {
+    display: flex;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: 600;
+}

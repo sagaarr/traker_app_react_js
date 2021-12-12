@@ -1,7 +1,14 @@
-export const loginUser = '/login';
-
-export const register = '/register';
-export const createUser = '/create_driver';
-export const updateUser = '/update_driver';
-export const deleteUser = '/delete_driver';
-export const getUser = '/get_drivers';
+export const loginUser = "/login";
+export const uploadImg = "/uploadfile";
+export const register = "/register";
+export const createUser = "/create_driver";
+export const updateUser = "/update_driver";
+export const updatePass = "/update_driver_pass";
+export const deleteUser = "/delete_driver";
+export const getUser = "/get_drivers";
+export const getAllAmbulances = "/ambulance/get-all-ambulance";
+export const appointCrew = "/appoint-crew";
+export const createAmbulance = "/ambulance/createAmbulance";
+export const GETDailyReport = "/reports/daily-report";
+export const GETPantentReport = "/reports/patent-report";
+export const GETDropdown = "/dropdown/zones";

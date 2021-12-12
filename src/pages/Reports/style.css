@@ -1,0 +1,21 @@
+table {
+    border-collapse: collapse;
+    width: 180%;
+    background: white;
+  }
+  
+  th {
+    height: 70px;
+  }
+
+  table, td, th {
+    border: 1px solid black;
+  }
+
+  .dateSelector {
+    font-size: 20px;
+  }
+
+  .react-date-picker .react-date-picker__wrapper {
+    border: none;
+  }
