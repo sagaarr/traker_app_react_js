@@ -6,6 +6,7 @@ import "./Users.css";
 import Loader from "../../components/Loader";
 import UserDetails from "../../components/UserDetails";
 import { editUserDetailsAction } from "../../utils/redux/actions/editUserActions";
+import { Form, InputGroup } from "react-bootstrap";
 
 const Users = ({ history }) => {
   const dispatch = useDispatch();
@@ -47,7 +48,27 @@ const Users = ({ history }) => {
     <>
       {loading && !error && <Loader />}
       <div className="container mt-top">
-        <div className="align-user">
+        <div className="row">
+          <div className="col-md-12 mt-5">
+            <h2>Users</h2>
+          </div>
+          <Form>
+            <div className="row mb-3 flex-row-reverse">
+              <Form.Group className="col-md-4" controlId="validationFormSearch">
+                <InputGroup hasValidation>
+                  <InputGroup.Text id="inputGroupPrepend"><i className="fas fa-search"></i></InputGroup.Text>
+                  <Form.Control
+                    type="text"
+                    placeholder="Search User"
+                    aria-describedby="inputGroupPrepend"
+                    name="username"
+                  />
+                </InputGroup>
+              </Form.Group>
+            </div>
+          </Form>
+        </div>
+        <div className="row gx-5">
           {data.map((val, index) => (
             <User
               key={index}

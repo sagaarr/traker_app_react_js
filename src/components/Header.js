@@ -29,19 +29,16 @@ const Header = (props) => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav className="navbar navbar-light fixed-top">
       <div className="container">
-        <Button variant="primary" onClick={handleShow}>
-          Launch
-        </Button>
-        <Link className="navbar-brand" to={"/users"}>
-          UnM
-        </Link>
+        <button class="navbar-toggler" type="button" onClick={handleShow}>
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav ml-auto">
             <Offcanvas show={show} onHide={handleShow}>
               <Offcanvas.Header closeButton>
-                <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                <Offcanvas.Title>Menu</Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 {isLoggedIn ? (
@@ -113,6 +110,9 @@ const Header = (props) => {
             </Offcanvas>
           </ul>
         </div>
+        <Link className="navbar-brand" to={"/users"}>
+          <b><span>UnM</span></b>
+        </Link>
       </div>
     </nav>
   );

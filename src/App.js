@@ -19,7 +19,7 @@ import CreateAmbulance from "./pages/Ambulances/CreateAmbulance";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import DailyReport from "./pages/Reports/DailyReport";
 import PatentReport from "./pages/Reports/PatentReport";
-
+import "./App.css"
 
 const App = () =>  {
   const {loading} = useSelector((state) => state.loadingReducer)

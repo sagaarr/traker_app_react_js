@@ -9,4 +9,22 @@
 
 .card {
     margin-bottom: 8px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px #ccc;
+}
+.card:hover {
+    box-shadow: 0px 0px 15px #aaa;
+}
+.title {
+    text-transform: capitalize;
+}
+.card-text ul {
+    list-style: none;
+}
+.card a.card-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+.card a.card-link:hover {
+    text-decoration: underline;
 }

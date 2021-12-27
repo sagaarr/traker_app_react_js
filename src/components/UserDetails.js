@@ -10,32 +10,29 @@ const UserDetails = ({onHide, show, record}) => (
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
+          <Modal.Title className='title' id="contained-modal-title-vcenter">
             {record.firstname}{" "}{record.lastname}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
          <Row>
-             <Col md={6}>
+             <Col md={12}>
              <ul>
-            <li ><strong>Phone Number -</strong>{record.phonenumber}</li>
-            <li><strong>Email -</strong>{record.email}</li>
-            <li><strong>Adhaar card -</strong>{record.adhaarCardNumber}</li>
-            
-            <li><strong>Bank Account Number -</strong>{record.bankaccountnumber}</li>
-            <li><strong>Current Address -</strong>{record.currentAddress}</li>
-            <li><strong>Driving Lisence -</strong>{record.driversLisencesNumber}</li>
-            <li><strong>Pan Card -</strong>{record.panCardNumber}</li>
-
-           
+            <li ><strong>Phone Number - </strong>{record.phonenumber}</li>
+            <li><strong>Email - </strong>{record.email}</li>
+            <li><strong>Adhaar card - </strong>{record.adhaarCardNumber}</li>
+            <li><strong>Bank Account Number - </strong>{record.bankaccountnumber}</li>
+            <li><strong>Current Address - </strong>{record.currentAddress}</li>
+            <li><strong>Driving Lisence - </strong>{record.driversLisencesNumber}</li>
+            <li><strong>Pan Card - </strong>{record.panCardNumber}</li>           
 
         </ul> 
              </Col>
-             <Col md={6}>
+             {/* <Col md={6}>
                  <div className="driver-photo">
                 <img src={'https://images.pexels.com/photos/6257814/pexels-photo-6257814.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'} alt="driver photo"/>
                 </div>
-             </Col>
+             </Col> */}
          </Row>
          
         </Modal.Body>
