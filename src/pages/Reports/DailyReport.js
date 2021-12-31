@@ -60,10 +60,10 @@ const DailyReport = () => {
                   component="select"
                   validate={required}
                 >
-                  <option value="">Select Ambulance</option>
-                  {dropdownListReducer.data.map((value) => {
-                    return <option value={value.value}>{value.value}</option>;
-                  })}
+                  <option value="">Select Zone</option>
+                  <option value={'zone-2'}>zone-2</option>
+                  <option value={'zone-3'}>zone-3</option>
+                  <option value={'zone-4'}>zone-4</option>
                 </Field>
               </div>
 
@@ -106,7 +106,7 @@ const DailyReport = () => {
             <th>O2 Leval</th>
           </tr>
           </thead>
-          {success &&
+          {/* {success &&
             data?.map((report) => (
               <tr key={report._id}>
                 <td>
@@ -127,7 +127,6 @@ const DailyReport = () => {
                 <td>{report.numberOfRound}</td>
                 <td>{report.callReading}</td>
                 <td>{report.roundReading}</td>
-                {/* <td>{report.numberOfPatent}</td> */}
                 <td>{report.fatal}</td>
                 <td>{report.PCRForm}</td>
                 <td>{report.openingReading}</td>
@@ -140,7 +139,7 @@ const DailyReport = () => {
                 <td>{report.diesel}</td>
                 <td>{report.oxygenLevel}</td>
               </tr>
-            ))}
+            ))} */}
         </table>
       ) : !success ? (
         <h3 style={{ color: "white" }}>{message}</h3>
