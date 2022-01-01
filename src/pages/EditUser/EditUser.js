@@ -55,18 +55,18 @@ const EditUser = ({ history }) => {
 
   if (!userDetailsReducer.user) history.goBack();
   return (
-    <div className="bg-white">
-      <h5>Edit Details</h5>
+    <div className="container mt-top">
+      {/* <h3 className="mb-3">Edit Details</h3> */}
 
       <Row>
         {/* Update User Details start */}
-        <div className="col-md-6 right-border">
+        <div className="col-md-7 right-border">
           <Form onSubmit={editUserDetailSubmit} initialValues={state}>
             {({ handleSubmit, values }) => (
               <form onSubmit={handleSubmit}>
-                <h2>Update Driver Details</h2>
+                <h3 className="mb-3">Update Driver Details</h3>
                 <div className="row">
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label>First Name</label>
                     <Field
                       name="firstname"
@@ -76,7 +76,7 @@ const EditUser = ({ history }) => {
                       component={Input}
                     />
                   </div>
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label htmlFor="lastname">Last Name</label>
                     <Field
                       name="lastname"
@@ -86,7 +86,7 @@ const EditUser = ({ history }) => {
                       component={Input}
                     />
                   </div>
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label>Email address</label>
                     <Field
                       name="email"
@@ -97,7 +97,7 @@ const EditUser = ({ history }) => {
                       component={Input}
                     />
                   </div>
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label>Adhaar card Number</label>
                     <Field
                       name="adhaarCardNumber"
@@ -107,7 +107,7 @@ const EditUser = ({ history }) => {
                       component={Input}
                     />
                   </div>
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label>Bank Account Number</label>
                     <Field
                       name="bankaccountnumber"
@@ -117,7 +117,7 @@ const EditUser = ({ history }) => {
                       component={Input}
                     />
                   </div>
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label>Drivers Lisence Number</label>
                     <Field
                       name="driversLisencesNumber"
@@ -127,7 +127,7 @@ const EditUser = ({ history }) => {
                       component={Input}
                     />
                   </div>
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label>Current Address</label>
                     <Field
                       name="currentAddress"
@@ -137,7 +137,7 @@ const EditUser = ({ history }) => {
                       component={Input}
                     />
                   </div>
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label>Pan Card Number</label>
                     <Field
                       name="panCardNumber"
@@ -147,7 +147,7 @@ const EditUser = ({ history }) => {
                       component={Input}
                     />
                   </div>
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label>Phone Number</label>
 
                     <Field
@@ -171,12 +171,12 @@ const EditUser = ({ history }) => {
           </Form>
         </div>
         {/* Update Password START */}
-        <div className="col-md-6">
+        <div className="col-md-5">
           <Form onSubmit={updatePassword}>
             {({ handleSubmit, values }) => (
               <form onSubmit={handleSubmit}>
-                <h2>Update Driver Password</h2>
-                <div className="form-group align-text col-md-6 offset-3">
+                <h3 className="mb-3">Update Driver Password</h3>
+                <div className="form-group align-text col-md-6 mb-3 offset-3">
                   <label>Password</label>
                   <Field
                     name="password"
@@ -186,7 +186,7 @@ const EditUser = ({ history }) => {
                     component={Input}
                   />
                 </div>
-                <div className="form-group align-text col-md-6 offset-3 mb-btn">
+                <div className="form-group align-text col-md-6 mb-3 offset-3 mb-btn">
                   <label>Confirm Password</label>
                   <Field
                     name="confirm-password"

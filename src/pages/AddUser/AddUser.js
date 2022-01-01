@@ -59,17 +59,17 @@ const AddUser = (props) => {
   };
 
   return (
-    <div className="bg-white">
-      <h5>Create User</h5>
+    <div className="container mt-top">
+      <h3 className="mb-3">Create User</h3>
       <Row>
         {/* Update User Details start */}
-        <div className="col-md-12" style={{ padding: "19px 110px" }}>
+        <div className="col-md-12">
           <Form onSubmit={createUserHandler} initialValues={state}>
             {({ handleSubmit, values }) => (
               <form onSubmit={handleSubmit}>
                 <div className="row">
                  
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label>First Name</label>
                     <Field
                       name="firstname"
@@ -80,7 +80,7 @@ const AddUser = (props) => {
                       validate={required}
                     />
                   </div>
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label htmlFor="lastname">Last Name</label>
                     <Field
                       name="lastname"
@@ -91,7 +91,7 @@ const AddUser = (props) => {
                       validate={required}
                     />
                   </div>
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label>Email address</label>
                     <Field
                       name="email"
@@ -103,7 +103,7 @@ const AddUser = (props) => {
                       validate={composeValidators(required,isValidEmail)}
                     />
                   </div>
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label>Adhaar card Number</label>
                     <Field
                       name="adhaarCardNumber"
@@ -114,7 +114,7 @@ const AddUser = (props) => {
                       validate={required}
                     />
                   </div>
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label>Bank Account Number</label>
                     <Field
                       name="bankaccountnumber"
@@ -125,7 +125,7 @@ const AddUser = (props) => {
                       validate={required}
                     />
                   </div>
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label>Drivers Lisence Number</label>
                     <Field
                       name="driversLisencesNumber"
@@ -136,7 +136,7 @@ const AddUser = (props) => {
                       validate={required}
                     />
                   </div>
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label>Current Address</label>
                     <Field
                       name="currentAddress"
@@ -147,7 +147,7 @@ const AddUser = (props) => {
                       validate={required}
                     />
                   </div>
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label>Pan Card Number</label>
                     <Field
                       name="panCardNumber"
@@ -158,7 +158,7 @@ const AddUser = (props) => {
                       validate={required}
                     />
                   </div>
-                  <div className="form-group align-text col-md-6 ">
+                  <div className="form-group align-text col-md-6 mb-3">
                     <label>Phone Number</label>
 
                     <Field

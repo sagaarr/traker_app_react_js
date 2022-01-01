@@ -39,16 +39,16 @@ const AmbulanceCrew = (props) => {
     return (
        <>
        {ambulanceReucer.loading ||  loading && <Loader/>}
-        <div className="bg-white">
-          <h5>Create Ambulance Crew</h5>
+        <div className='container mt-top'>
+          <h3>Create Ambulance Crew</h3>
           <Row>
-            <div className="col-md-12" style={{ padding: "19px 110px" }}>
+            <div className="col-md-12">
               <Form onSubmit={createCrew} >
                 {({ handleSubmit, values, errors, touched }) => (
                   <form onSubmit={handleSubmit}>
                     <div className="row">
                      
-                      <div className="form-group align-text col-md-12 ">
+                      <div className="form-group align-text col-md-12 mb-3">
                         <label>Select Ambulance</label>
                         
                         <Field name="ambulanceId" className="form-control" component="select" validate={required}>
@@ -62,7 +62,7 @@ const AmbulanceCrew = (props) => {
                         </Field>
                         {touched.ambulanceId && errors.ambulanceId ? <span className="error">*{errors.ambulanceId}</span>:""}
                       </div>
-                      <div className="form-group align-text col-md-6 ">
+                      <div className="form-group align-text col-md-6 mb-3">
                         <label htmlFor="driver">Select Driver</label>
                         <Field name="driver" className="form-control" component="select" validate={required}>
                         <option value="">Select Driver</option>
@@ -76,7 +76,7 @@ const AmbulanceCrew = (props) => {
                         </Field>
                         {touched.driver && errors.driver ? <span className="error">*{errors.driver}</span>:""}
                       </div>
-                      <div className="form-group align-text col-md-6 ">
+                      <div className="form-group align-text col-md-6 mb-3">
                         <label>Select EMT</label>
                         <Field name="pilot" className="form-control" component="select" validate={required}>
                         <option value="">Select EMT</option>
@@ -91,7 +91,7 @@ const AmbulanceCrew = (props) => {
                         {touched.pilot && errors.pilot ? <span className="error">*{errors.pilot}</span>:""}
                       </div>
 
-                      <div className="form-group align-text col-md-6 ">
+                      <div className="form-group align-text col-md-6 mb-3">
                         <label>Shift time and details for refrence</label>
                         <Field name="shift" className="form-control" component="select" validate={required} component="input" />
                         {touched.shift && errors.shift ? <span className="error">*{errors.shift}</span>:""}

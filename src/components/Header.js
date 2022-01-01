@@ -31,6 +31,8 @@ const Header = (props) => {
   return (
     <nav className="navbar navbar-light fixed-top">
       <div className="container">
+        {isLoggedIn ? (
+        <>
         <button class="navbar-toggler" type="button" onClick={handleShow}>
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,22 +43,21 @@ const Header = (props) => {
                 <Offcanvas.Title>Menu</Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                {isLoggedIn ? (
-                  <>
-                    <Link to="/users" className="nav-link dashboard-link">
+                
+                    <Link to="/users" onClick={handleShow} className="nav-link dashboard-link">
                       Dashboard
                     </Link>
                     <Accordion className="mb-2">
                       <Accordion.Item eventKey="1">
                         <Accordion.Header>Ambulance</Accordion.Header>
                         <Accordion.Body>
-                          <LinkContainer to={protectedRoutes.getAllAmbulances}>
+                          <LinkContainer onClick={handleShow} to={protectedRoutes.getAllAmbulances}>
                             <Dropdown.Item>Ambulances</Dropdown.Item>
                           </LinkContainer>
-                          <LinkContainer to={protectedRoutes.createAmbulance}>
+                          <LinkContainer onClick={handleShow} to={protectedRoutes.createAmbulance}>
                             <Dropdown.Item>Create Ambulance</Dropdown.Item>
                           </LinkContainer>
-                          <LinkContainer to={protectedRoutes.ambulanceCrew}>
+                          <LinkContainer onClick={handleShow} to={protectedRoutes.ambulanceCrew}>
                             <Dropdown.Item>Create Ambulance Crew</Dropdown.Item>
                           </LinkContainer>
                         </Accordion.Body>
@@ -67,10 +68,10 @@ const Header = (props) => {
                       <Accordion.Item eventKey="1">
                         <Accordion.Header>Pilot OR EMT</Accordion.Header>
                         <Accordion.Body>
-                          <LinkContainer to="/create_user">
+                          <LinkContainer onClick={handleShow} to="/create_user">
                             <Dropdown.Item>Create Driver or EMT</Dropdown.Item>
                           </LinkContainer>
-                          <LinkContainer to="/sub-link1">
+                          <LinkContainer onClick={handleShow} to="/sub-link1">
                             <Dropdown.Item>Attendance</Dropdown.Item>
                           </LinkContainer>
                         </Accordion.Body>
@@ -81,10 +82,10 @@ const Header = (props) => {
                       <Accordion.Item eventKey="1">
                         <Accordion.Header>Reports</Accordion.Header>
                         <Accordion.Body>
-                          <LinkContainer to={protectedRoutes.dailyReport}>
+                          <LinkContainer onClick={handleShow} to={protectedRoutes.dailyReport}>
                             <Dropdown.Item>Daily Report</Dropdown.Item>
                           </LinkContainer>
-                          <LinkContainer to={protectedRoutes.patentReport}>
+                          <LinkContainer onClick={handleShow} to={protectedRoutes.patentReport}>
                             <Dropdown.Item>Patent Report</Dropdown.Item>
                           </LinkContainer>
                         </Accordion.Body>
@@ -96,24 +97,24 @@ const Header = (props) => {
                     >
                       Logout
                     </button>
-                  </>
-                ) : (
-                  <>
-                    <li className="nav-item">
-                      <Link className="nav-link" to={"/sign-in"}>
-                        Login
-                      </Link>
-                    </li>
-                  </>
-                )}
+                  
               </Offcanvas.Body>
             </Offcanvas>
           </ul>
         </div>
+        </>
+        ) : (
+          <>
+            <Link to="/sign-in" className="nav-link dashboard-link">
+              Login
+            </Link>
+          </>
+        )}
         <Link className="navbar-brand" to={"/users"}>
           <b><span>UnM</span></b>
         </Link>
       </div>
+      
     </nav>
   );
 };

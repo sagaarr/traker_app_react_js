@@ -19,3 +19,21 @@ table {
   .react-date-picker .react-date-picker__wrapper {
     border: none;
   }
+  .report-table th {
+
+    transform: rotate(-90deg);
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+
+    /* IE */
+    -ms-transform: rotate(-90deg);
+
+    /* Opera */
+    -o-transform: rotate(-90deg);
+    height: 100px;
+    min-width: 100px;
+    vertical-align: middle;  
+  }
