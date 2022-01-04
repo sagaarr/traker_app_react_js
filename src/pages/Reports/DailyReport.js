@@ -9,6 +9,7 @@ import DateInput from "../../utils/inputComponents/DateInput";
 import { required } from "../../utils/constants/validations";
 import { getDropdownList } from "../../utils/redux/actions/dropdowns";
 import Loader from "../../components/Loader";
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 
 const DailyReport = () => {
   const dispatch = useDispatch();
@@ -78,9 +79,17 @@ const DailyReport = () => {
         )}
       </Form>
 
+    
       {data.length !== 0 && success ? (
         <div className="table-responsive">
-          <table className="table table-striped report-table">
+        <ReactHTMLTableToExcel
+              id="test-table-xls-button"
+              className="download-table-xls-button"
+              table="table-to-xls"
+              filename="tablexls"
+              sheet="tablexls"
+              buttonText="Download as Excel file"/>
+          <table className="table table-striped report-table" id="table-to-xls">
             <thead className="thead-light">
               <tr>
                 <th>Sr.No</th>

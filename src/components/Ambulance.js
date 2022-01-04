@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Collapse } from "react-bootstrap";
+import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import "./Style.css";
 
@@ -19,12 +20,12 @@ const Ambulance = ({ value }) => {
           <div className="card-text">
             <ul>
               <li className="cardContent">
-                <strong>Insurance Renual:</strong>
-                {value.insuranceRenual}
+                <strong>Insurance Renual:</strong>{" "}
+                <Moment format="DD/MM/YYYY">{value.insuranceRenual}</Moment>
               </li>
               <li className="cardContent">
-                <strong>Service Date:</strong>
-                {value.serviceDate}
+                <strong>Service Date:</strong>{" "}
+                <Moment format="DD/MM/YYYY">{value.serviceDate}</Moment>
               </li>
               <li className="cardContent">
                 <strong>Location:</strong>
@@ -70,7 +71,7 @@ const Ambulance = ({ value }) => {
                     </tr>
                     <tr className="fuel-record-divider">
                       <th>Filled on :</th>
-                      <td>{fuel.createdAt}</td>
+                      <td><Moment format="DD/MM/YYYY">{fuel.createdAt}</Moment></td>
                     </tr>
                   </tbody>
                 ))}
