@@ -7,24 +7,27 @@ import DatePicker from "react-date-picker";
 import { Field, Form } from "react-final-form";
 import DateInput from "../../utils/inputComponents/DateInput";
 import { required } from "../../utils/constants/validations";
-import { getDropdownList } from "../../utils/redux/actions/dropdowns";
+import { getDropdownList, getStateList } from "../../utils/redux/actions/dropdowns";
 import Loader from "../../components/Loader";
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
+import Select from "react-dropdown-select"
 
 const DailyReport = () => {
   const dispatch = useDispatch();
-  const { data, loading, success, message } = useSelector(
-    (state) => state.reportData
-  );
+  const { data, loading, success, message } = useSelector((state) => state.reportData);
+  
   const dropdownListReducer = useSelector((state) => state.dropdownListReducer);
   let index = 0;
   useEffect(() => {
     dispatch(getDropdownList("zone"));
+    dispatch(getStateList());
   }, []);
+
+
   const handleFormSubmit = (e) => {
     dispatch(getDailyReport(e));
   };
-
+//  const {date, zone, state} = req.params;
   
   return (
     <div className="container mt-top">
@@ -37,7 +40,7 @@ const DailyReport = () => {
                 <h2>Daily Report </h2>
               </div>
               <div className="col-md-3">
-                <span>Start Date</span>
+                <span>Date</span>
                 <Field
                   className="form-control"
                   name="startDate"
@@ -45,21 +48,11 @@ const DailyReport = () => {
                 />
               </div>
               <div className="col-md-3">
-                <span>End Date</span>
-                <Field
-                  className="form-control "
-                  name="endDate"
-                  component={DateInput}
-                />
-              </div>
-
-              <div className="col-md-3">
                 <span>Select Zone</span>
                 <Field
                   name="zone"
                   className="form-control"
                   component="select"
-                  validate={required}
                 >
                   <option value="">Select Zone</option>
                   <option value={'zone-2'}>zone-2</option>
@@ -67,7 +60,25 @@ const DailyReport = () => {
                   <option value={'zone-4'}>zone-4</option>
                 </Field>
               </div>
+              <div className="col-md-3">
+                <span>State</span>
+                {/* <Field
+                  name="state"
+                  className="form-control"
+                  component="select"
+                >
+                  <option value="">Select State</option>
+                  <option value={'zone-2'}>zone-2</option>
+                  <option value={'zone-3'}>zone-3</option>
+                  <option value={'zone-4'}>zone-4</option>
+                </Field> */}
 
+              <Select
+                options={['1','1','1','1']}
+                values={[]}
+                onChange={(value) => console.log(value)}
+              />
+              </div>
               <div className="col-md-3 mt-4">
                 <span></span>
                 <button className="btn btn-primary" type="submit">

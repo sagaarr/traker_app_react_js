@@ -12,3 +12,6 @@ export const createAmbulance = "/ambulance/createAmbulance";
 export const GETDailyReport = "/reports/daily-report";
 export const GETPantentReport = "/reports/patent-report";
 export const GETDropdown = "/dropdown/zones";
+export const GETStateDropdown = "/dropdown/locations/state";
+export const GETLocations = "/get-locations/"
+export const GETAmbulanceAndUsers = "/get-users/"

@@ -1,4 +1,4 @@
-import { USER_LIST_FAIL, USER_LIST_REQ, USER_LIST_SUCCESS} from '../actions/types';
+import * as constants from '../actions/types';
 
 
 const INITIAL_STATE = {
@@ -10,19 +10,19 @@ const INITIAL_STATE = {
 export const userListReducer = (state = INITIAL_STATE, action) => {
     const {type, data} = action;
     switch (type) {
-        case USER_LIST_REQ:
+        case constants.USER_LIST_REQ:
             return {
                 ...state,
                 loading:true
             }
-        case USER_LIST_SUCCESS:
+        case constants.USER_LIST_SUCCESS:
             return {
                 ...state,
                 loading:false,
                 data:data,
                 error:false,
             }
-        case USER_LIST_FAIL:
+        case constants.USER_LIST_FAIL:
             return {
                 ...state,
                 loading:false,
@@ -33,3 +33,59 @@ export const userListReducer = (state = INITIAL_STATE, action) => {
             return state
     }
 }
+
+export const userLocationsReducer = (state = INITIAL_STATE, action) => {
+    const {type, data} = action;
+    switch (type) {
+        case constants.GET_LOCATIONS_REQ:
+            return {
+                ...state,
+                loading:true
+            }
+        case constants.GET_LOCATIONS_SUCCESS:
+            return {
+                ...state,
+                loading:false,
+                data:data,
+                error:false,
+            }
+        case constants.GET_LOCATIONS_FAIL:
+            return {
+                ...state,
+                loading:false,
+                data:data,
+                error:true,
+            }
+        default:
+            return state
+    }
+}
+
+
+export const getAmbulanceAndUserDetailsReducer = (state = INITIAL_STATE, action) => {
+    const {type, data} = action;
+    switch (type) {
+        case constants.GET_USERS_AMBULANCE_REQ:
+            return {
+                ...state,
+                loading:true
+            }
+        case constants.GET_USERS_AMBULANCE_SUCCESS:
+            return {
+                ...state,
+                loading:false,
+                data:data,
+                error:false,
+            }
+        case constants.GET_USERS_AMBULANCE_FAIL:
+            return {
+                ...state,
+                loading:false,
+                data:data,
+                error:true,
+            }
+        default:
+            return state
+    }
+}
+
