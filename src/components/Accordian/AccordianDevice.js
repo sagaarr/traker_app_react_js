@@ -8,13 +8,13 @@ const AccordianDevice = ({
     isActive,
     blockTitle
 }) => {
-  return <div>
-    <div className="accordian-header" onClick={() => accordionToggle(blockTitle)}>
-        <div className="heading-left" style={{backgroundColor:"red"}}>
-            {title}
+  return <div className='accordian mb-4'>
+    <div className={ isActive == blockTitle ? "accordian-header collapsed" : "accordian-header" } onClick={() => accordionToggle(blockTitle)}>
+        <div className="header" key={blockTitle}>
+            {blockTitle}
         </div>
         <div className="collapse-icon heading-right">
-            <span className="icon-up-arrow"></span>
+            {title} <span className={ isActive == blockTitle ? "fa fa-chevron-down" : "fa fa-chevron-right" }></span>
         </div>
     </div>
     {

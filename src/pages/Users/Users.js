@@ -83,33 +83,27 @@ const Users = ({ history }) => {
         </div>
       </div>
       <UserDetails show={show} onHide={onHide} record={userData} /> */}
- <div className="container mt-top">
-   <div className="mb-4">
+ <div className="container mt-top mt-5">
    <AccordianBlockDevice 
-       blockTitle={'zone-2'}
+       blockTitle={'Zone-2'}
        accordianHeader={'Click here to See locations from Zone 2'}
    >
      <Locations value={'zone-2'}/>
    </AccordianBlockDevice>
-   </div>
 
-   <div className="mb-4">
    <AccordianBlockDevice 
-       blockTitle={'zone-3'}
+       blockTitle={'Zone-3'}
        accordianHeader={'Click here to See locations from Zone 3'}
    >
      <Locations value={'zone-3'}/>
    </AccordianBlockDevice>
-   </div>
  
-   <div className="mb-4">
    <AccordianBlockDevice 
-       blockTitle={'zone-4'}
+       blockTitle={'Zone-4'}
        accordianHeader={'Click here to See locations from Zone 4'}
    >
      <Locations value={'zone-4'}/>
    </AccordianBlockDevice>
-   </div>
 
  </div>
     </>

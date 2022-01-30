@@ -16,18 +16,13 @@ const AccordianBlockDevice = ({
         else setIsActive(activeElement)
     };
 
-  return <div>
-      <div className="header" key={blockTitle} style={{backgroundColor:"green"}}>
-            {blockTitle}
-      </div>
-      <AccordianDevice
+  return <AccordianDevice
         content={children}
         title={accordianHeader}
         accordionToggle={accordionToggle}
         isActive={isActive}
         blockTitle={blockTitle}
-      />
-  </div>;
+      />;
 };
 
 AccordianBlockDevice.propTypes = {

@@ -28,3 +28,75 @@
 .card a.card-link:hover {
     text-decoration: underline;
 }
+
+.accordian-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.accordian-header .collapse-icon span.fa {
+    padding: 0px 15px;
+}
+.container > .accordian > .accordian-header {
+    color: #084298;
+    background-color: #cfe2ff;
+    border-color: #b6d4fe;
+    padding: 10px 20px;
+}
+.container > .accordian > .accordian-header .header {
+    font-size: 24px;
+    font-weight: bold;
+}
+.container > .accordian > .accordian-content {
+    padding: 10px;
+    border: 1px solid #b6d4fe;
+}
+.container .accordian-content {
+    padding: 10px;
+    border: 1px solid #d3d6d8;
+}
+.accordian .accordian-content .accordian-header {
+    color: #41464b;
+    background-color: #e2e3e5;
+    border-color: #d3d6d8;
+    padding: 10px 20px;
+}
+.container .accordian-content .accordian-header .header {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.container .accordian-content .card-header {
+    display: flex;
+    align-items: center;
+}
+.container .accordian-content .card-header img.ambulance-img-round {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.container .accordian-content .card-header h4 {
+    margin-bottom: 0;
+}
+.container .accordian-content .card-header span {
+    flex-grow: 1;
+}
+.text-left {
+    text-align: left;
+}
+.container .accordian-content .card .card-body .name {
+    text-transform: capitalize;
+}
+.blink-error {
+    padding: 20px 0;
+    color: #ff0000;
+    font-size: 18px;
+    font-weight: bold;
+    animation: blink 1s linear infinite;
+}
+@keyframes blink{
+    0%{opacity: 0;}
+    50%{opacity: .5;}
+    100%{opacity: 1;}
+}
