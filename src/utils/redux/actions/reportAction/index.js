@@ -9,7 +9,7 @@ export const getDailyReport = (payload) => async dispatch => {
     let {startDate, zone, state} = payload;
     startDate = moment(startDate).format('DD-MM-YYYY')
     try {
-        const report = await userServices.getRequest(`${GETDailyReport}/${startDate}/${zone}/${state}`);
+        const report = await userServices.getRequest(`${GETDailyReport}/${startDate}/${zone}/${state && state.state ? state.state : undefined}`);
         console.log(report.data);
         dispatch({
             type:constants.DAILY_REPORT_SUCCESS,

@@ -32,7 +32,8 @@ const DailyReport = () => {
   const handleFormSubmit = (e) => {
     dispatch(getDailyReport(e));
   };
-//  const {date, zone, state} = req.params;
+
+
   
   return (
     <div className="container mt-top">
@@ -95,6 +96,7 @@ const DailyReport = () => {
               <tr>
                 <th>Sr.No</th>
                 <th>Location</th>
+                <th>State</th>
                 <th>Date</th>
                 <th>Shift Time</th>
                 <th>EMT</th>
@@ -122,45 +124,53 @@ const DailyReport = () => {
               </tr>
             </thead>
             <tbody>
-            { success && data?.map((reports) => (
-                reports.data?.map(element => (
-                <tr key={element._id}>
+            { success && data?.map((reports, index) => {
+              return (
+                <tr key={index}>
                   <td>{ ++index }</td>
-                  <td>
-                    {element.ambulance.location}{" "}
-                    <strong>
-                      ({element.ambulance.veichelNumber})
-                    </strong>
-                  </td>
-                  <td>
-                    <Moment format="DD/MM/YYYY">{element.createdAt}</Moment>
-                  </td>
-                  <td>{element.shift}</td>
-                  <td>{element.EMT.firstname}</td>
-                  <td>{element.pilot[0].firstname}</td>
-                  <td>{element.report.numberOfCalls}</td>
-                  <td>{element.report.numberOfRound}</td>
-                  <td>{element.report.callReading}</td>
-                  <td>{element.report.roundReading}</td>
-                  <td>{element.report.numberOfPatent}</td>
-                  <td>{element.report.fatal}</td>
-                  <td>{element.report.PCRForm}</td>
-                  <td>{element.report.openingReading}</td>
-                  <td>{element.report.closingReading}</td>
-                  <td>{ (element.report.closingReading >= element.report.openingReading) ? Math.abs(Math.round(element.report.closingReading - element.report.openingReading, 2)) : '-' }</td>
-                  <td>{element.report.dieselLtr}</td>
-                  <td>{element.report.rate}</td>
-                  <td>{element.report.amount}</td>
-                  <td>{element.report.uniformAndIdCheck.toString()}</td>
-                  <td>{element.report.stockRegister.toString()}</td>
-                  <td>{element.report.diesel}</td>
-                  <td>{element.report.oxygenLevel}</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                ))
-              ))}
+                    <td>
+                      {reports._id.ambulaceDetails.location}{" "}
+                      <strong>
+                        ({reports._id.ambulaceDetails.veichelNumber})
+                      </strong>
+                    </td>
+                    <td>{reports._id.ambulaceDetails.state}</td>
+                    <td>
+                      {reports._id.date}
+                    </td>
+                    <td>{reports._id.shift}</td>
+              {
+                  reports.data?.map(element => (
+
+                    <>
+                    <td>{element.EMT.firstname}</td>
+                    <td>{element.pilot.firstname}</td>
+                    <td>{element.numberOfCalls}</td>
+                    <td>{element.numberOfRound}</td>
+                    <td>{element.callReading}</td>
+                    <td>{element.roundReading}</td>
+                    <td>{element.numberOfPatent}</td>
+                    <td>{element.fatal}</td>
+                    <td>{element.PCRForm}</td>
+                    <td>{element.openingReading}</td>
+                    <td>{element.closingReading}</td>
+                    <td>{ (element.closingReading >= element.openingReading) ? Math.abs(Math.round(element.closingReading - element.openingReading, 2)) : '-' }</td>
+                    <td>{element.dieselLtr}</td>
+                    <td>{element.rate}</td>
+                    <td>{element.amount}</td>
+                    <td>{element.uniformAndIdCheck.toString()}</td>
+                    <td>{element.stockRegister.toString()}</td>
+                    <td>{element.diesel}</td>
+                    <td>{element.oxygenLevel}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </>
+                  ))
+              }
+                  </tr>
+              )
+            })}
             </tbody>
           </table>
         </div>
