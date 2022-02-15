@@ -20,4 +20,23 @@ const INITIAL_STATE = {
         return state;
     }
   };
+
+  export const dropdownStateListReducer = (state = INITIAL_STATE, action) => {
+    const { type, data } = action;
+    switch (type) {
+      case constants.STATE_DROPDOWN_REQ:
+        return {...state,loading: true};
+      case constants.STATE_DROPDOWN_SUCCESS:
+        return {
+          ...state,
+            loading: false,
+            data: data, 
+            error:false
+        };
+      case constants.DROPDOWN_LIST_FAIL:        
+        return {...state,loading: false,data: data,error:true};
+      default:
+        return state;
+    }
+  };
   

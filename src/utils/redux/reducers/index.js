@@ -11,7 +11,7 @@ import { uploadImgReducer } from "./uploadImgReducer";
 import { getAmbulanceAndUserDetailsReducer, userListReducer, userLocationsReducer } from "./userListReducer";
 import { loadingReducer } from "./loadingReucer";
 import { patentReport, reportData } from "./reportReducer";
-import { dropdownListReducer } from "./dropdownsReducer";
+import { dropdownListReducer , dropdownStateListReducer} from "./dropdownsReducer";
 
 const rootReducer = combineReducers({
   loadingReducer:loadingReducer,
@@ -31,6 +31,7 @@ const rootReducer = combineReducers({
   // locations 
   userLocationsReducer:userLocationsReducer,
   getAmbulanceAndUserDetailsReducer:getAmbulanceAndUserDetailsReducer,
+  dropdownStateListReducer:dropdownStateListReducer,
 });
 
 export default rootReducer;

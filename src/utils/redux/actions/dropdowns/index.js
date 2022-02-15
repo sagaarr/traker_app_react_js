@@ -27,11 +27,15 @@ export const getDropdownList = (payload) => async dispatch => {
 }
 
 export const getStateList = () => async dispatch => {
-    console.log("Helllo")
     dispatch({type:constants.STATE_DROPDOWN_REQ});
     try {
         const states = await userServices.getRequest(`${GETStateDropdown}`);
-        console.log(states);
+
+        states.data = states.data.filter((value, index, self) =>
+            index === self.findIndex((t) => (
+                t.state === value.state && t.state === value.state
+            ))
+        )
         dispatch({
             type:constants.STATE_DROPDOWN_SUCCESS,
             data:states.data

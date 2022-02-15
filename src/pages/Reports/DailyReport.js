@@ -11,12 +11,17 @@ import { getDropdownList, getStateList } from "../../utils/redux/actions/dropdow
 import Loader from "../../components/Loader";
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 import Select from "react-dropdown-select"
+import "react-widgets/styles.css";
+import DropdownList from "react-widgets/DropdownList";
+import Dropdown from "../../utils/inputComponents/Dropdown";
 
 const DailyReport = () => {
   const dispatch = useDispatch();
   const { data, loading, success, message } = useSelector((state) => state.reportData);
   
   const dropdownListReducer = useSelector((state) => state.dropdownListReducer);
+  const dropdownStateListReducer = useSelector((state) => state.dropdownStateListReducer);
+
   let index = 0;
   useEffect(() => {
     dispatch(getDropdownList("zone"));
@@ -31,7 +36,7 @@ const DailyReport = () => {
   
   return (
     <div className="container mt-top">
-      {dropdownListReducer.loading || (loading && <Loader />)}
+      {dropdownListReducer.loading && dropdownStateListReducer.loading  && <Loader/>}
       <Form onSubmit={handleFormSubmit}>
         {({ handleSubmit }) => (
           <form onSubmit={handleSubmit}>
@@ -49,35 +54,22 @@ const DailyReport = () => {
               </div>
               <div className="col-md-3">
                 <span>Select Zone</span>
-                <Field
-                  name="zone"
-                  className="form-control"
-                  component="select"
-                >
-                  <option value="">Select Zone</option>
-                  <option value={'zone-2'}>zone-2</option>
-                  <option value={'zone-3'}>zone-3</option>
-                  <option value={'zone-4'}>zone-4</option>
-                </Field>
+                <Field 
+                name="zone"
+                placeholder="Please Select zone"
+                dropdownData={['zone-2','zone-3','zone-4']}
+                component={Dropdown}
+                />
               </div>
               <div className="col-md-3">
                 <span>State</span>
-                {/* <Field
-                  name="state"
-                  className="form-control"
-                  component="select"
-                >
-                  <option value="">Select State</option>
-                  <option value={'zone-2'}>zone-2</option>
-                  <option value={'zone-3'}>zone-3</option>
-                  <option value={'zone-4'}>zone-4</option>
-                </Field> */}
-
-              <Select
-                options={['1','1','1','1']}
-                values={[]}
-                onChange={(value) => console.log(value)}
-              />
+                   <Field 
+                name="state"
+                placeholder="Please Select State"
+                textFiled="state"
+                dropdownData={dropdownStateListReducer.data}
+                component={Dropdown}
+                />
               </div>
               <div className="col-md-3 mt-4">
                 <span></span>
@@ -89,8 +81,6 @@ const DailyReport = () => {
           </form>
         )}
       </Form>
-
-    
       {data.length !== 0 && success ? (
         <div className="table-responsive">
         <ReactHTMLTableToExcel
