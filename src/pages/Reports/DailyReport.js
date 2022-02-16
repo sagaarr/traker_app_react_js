@@ -126,25 +126,28 @@ const DailyReport = () => {
             <tbody>
             { success && data?.map((reports, index) => {
               return (
-                <tr key={index}>
-                  <td>{ ++index }</td>
-                    <td>
-                      {reports._id.ambulaceDetails.location}{" "}
-                      <strong>
-                        ({reports._id.ambulaceDetails.veichelNumber})
-                      </strong>
-                    </td>
-                    <td>{reports._id.ambulaceDetails.state}</td>
-                    <td>
-                      {reports._id.date}
-                    </td>
-                    <td>{reports._id.shift}</td>
-              {
-                  reports.data?.map(element => (
-
-                    <>
-                    <td>{element.EMT.firstname}</td>
-                    <td>{element.pilot.firstname}</td>
+                reports.data?.map((element, dataIndex) => (
+                  <tr key={index+'_'+dataIndex}>
+                    {
+                      dataIndex == 0 ? (
+                        <>
+                        <td rowspan={ reports.data.length }>{ ++index }</td>
+                        <td rowspan={ reports.data.length }>
+                          {reports._id.ambulaceDetails.location}{" "}
+                          <strong>
+                            ({reports._id.ambulaceDetails.veichelNumber})
+                          </strong>
+                        </td>
+                        <td rowspan={ reports.data.length }>{reports._id.ambulaceDetails.state}</td>
+                        <td rowspan={ reports.data.length }>
+                          {reports._id.date}
+                        </td>
+                        <td rowspan={ reports.data.length }>{reports._id.shift}</td>
+                        </>
+                      )  : ''
+                    }
+                    <td>{ element.userId != element.EMT._id ? '-' : element.EMT.firstname}</td>
+                    <td>{ element.userId != element.pilot._id ? '-' : element.pilot.firstname}</td>
                     <td>{element.numberOfCalls}</td>
                     <td>{element.numberOfRound}</td>
                     <td>{element.callReading}</td>
@@ -165,10 +168,8 @@ const DailyReport = () => {
                     <td></td>
                     <td></td>
                     <td></td>
-                    </>
-                  ))
-              }
                   </tr>
+                  ))
               )
             })}
             </tbody>
