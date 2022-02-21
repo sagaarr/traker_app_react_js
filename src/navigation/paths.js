@@ -14,7 +14,9 @@ export const protectedRoutes = {
   ambulanceCrew:"/create-crew",  
   createAmbulance:"/create-ambulance",
   dailyReport:"/daily-report",
-  patentReport:'/patent-report'
+  patentReport:'/patent-report',
+  ambulanceDropdown:'/ambulance-dropdown',
+  locationDropdown:'/location-dropdown',
 };
 
 // Any new user access need tobe added to the system need to pass a string element in here to give permission 

@@ -91,6 +91,21 @@ const Header = (props) => {
                         </Accordion.Body>
                       </Accordion.Item>
                     </Accordion>
+
+                    <Accordion className="mb-2">
+                      <Accordion.Item eventKey="1">
+                        <Accordion.Header>Dropdowns</Accordion.Header>
+                        <Accordion.Body>
+                          <LinkContainer onClick={handleShow} to={protectedRoutes.locationDropdown}>
+                            <Dropdown.Item>Add Location</Dropdown.Item>
+                          </LinkContainer>
+                          <LinkContainer onClick={handleShow} to={protectedRoutes.ambulanceDropdown}>
+                            <Dropdown.Item>Add Ambulance</Dropdown.Item>
+                          </LinkContainer>
+                        </Accordion.Body>
+                      </Accordion.Item>
+                    </Accordion>
+
                     <button
                       className="nav-link logout-btn"
                       onClick={logoutHandler}

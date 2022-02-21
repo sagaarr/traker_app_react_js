@@ -20,6 +20,8 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import DailyReport from "./pages/Reports/DailyReport";
 import PatentReport from "./pages/Reports/PatentReport";
 import "./App.css"
+import AmbulanceDropdown from "./pages/Dropdown/AmbulanceDropdown";
+import LocationDropdowns from "./pages/Dropdown/LocationDropdowns";
 
 const App = () =>  {
   const {loading} = useSelector((state) => state.loadingReducer)
@@ -41,6 +43,9 @@ const App = () =>  {
             {/* Reports */}
             <Route path={protectedRoutes.dailyReport} component={DailyReport}/>
             <Route path={protectedRoutes.patentReport} component={PatentReport}/>
+            {/* Dropdowns */}
+            <Route path={protectedRoutes.ambulanceDropdown} component={AmbulanceDropdown}/>
+            <Route path={protectedRoutes.locationDropdown} component={LocationDropdowns}/>
             
           </Switch>
         </div>
