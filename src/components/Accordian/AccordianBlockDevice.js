@@ -15,14 +15,19 @@ const AccordianBlockDevice = ({
         if(activeElement === isActive) setIsActive('');
         else setIsActive(activeElement)
     };
-
-  return <AccordianDevice
+  return (
+    <>
+    
+     <AccordianDevice
         content={children}
         title={accordianHeader}
         accordionToggle={accordionToggle}
         isActive={isActive}
         blockTitle={blockTitle}
-      />;
+      />
+    </>
+  ) 
+ 
 };
 
 AccordianBlockDevice.propTypes = {

@@ -33,8 +33,8 @@ const Header = (props) => {
       <div className="container">
         {isLoggedIn ? (
         <>
-        <button class="navbar-toggler" type="button" onClick={handleShow}>
-          <span class="navbar-toggler-icon"></span>
+        <button className="navbar-toggler" type="button" onClick={handleShow}>
+          <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav ml-auto">

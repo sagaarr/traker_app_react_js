@@ -12,6 +12,7 @@ import { getAmbulanceAndUserDetailsReducer, userListReducer, userLocationsReduce
 import { loadingReducer } from "./loadingReucer";
 import { patentReport, reportData } from "./reportReducer";
 import { dropdownListReducer , dropdownStateListReducer} from "./dropdownsReducer";
+import { deleteGroupReducer } from "./Users";
 
 const rootReducer = combineReducers({
   loadingReducer:loadingReducer,
@@ -32,6 +33,7 @@ const rootReducer = combineReducers({
   userLocationsReducer:userLocationsReducer,
   getAmbulanceAndUserDetailsReducer:getAmbulanceAndUserDetailsReducer,
   dropdownStateListReducer:dropdownStateListReducer,
+  deleteGroupReducer:deleteGroupReducer
 });
 
 export default rootReducer;

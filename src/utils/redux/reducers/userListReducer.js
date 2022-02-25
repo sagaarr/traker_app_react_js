@@ -34,7 +34,14 @@ export const userListReducer = (state = INITIAL_STATE, action) => {
     }
 }
 
-export const userLocationsReducer = (state = INITIAL_STATE, action) => {
+
+const INITIAL_LOCATION_STATE = {
+    loading:false,
+    data:[],
+    error:true
+}
+
+export const userLocationsReducer = (state = INITIAL_LOCATION_STATE, action) => {
     const {type, data} = action;
     switch (type) {
         case constants.GET_LOCATIONS_REQ:
@@ -61,8 +68,14 @@ export const userLocationsReducer = (state = INITIAL_STATE, action) => {
     }
 }
 
+const INITIAL_AMBULANCE_LOCATION = {
+    loading:false,
+    data:[],
+    error:true
+}
 
-export const getAmbulanceAndUserDetailsReducer = (state = INITIAL_STATE, action) => {
+
+export const getAmbulanceAndUserDetailsReducer = (state = INITIAL_AMBULANCE_LOCATION, action) => {
     const {type, data} = action;
     switch (type) {
         case constants.GET_USERS_AMBULANCE_REQ:
