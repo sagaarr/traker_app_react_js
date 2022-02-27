@@ -15,3 +15,4 @@ export const GETDropdown = "/dropdown/zones";
 export const GETStateDropdown = "/dropdown/locations/state";
 export const GETLocations = "/get-locations/"
 export const GETAmbulanceAndUsers = "/get-users/"
+export const GETAmbulancesDropdown = '/dropdown/location-dropdown/'
